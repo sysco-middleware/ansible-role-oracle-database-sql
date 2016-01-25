@@ -4,7 +4,7 @@ oracle_database_sql_oracle_home: #
 oracle_database_sql_admin_username: system #
 oracle_database_sql_admin_password: welcome1 #
 oracle_database_sql_is_dba: no #
-oracle_database_sql_create_schema: no #yes
+oracle_database_sql_create_schemas: no #yes
 oracle_database_sql_schemas:
 #  -
 #    name: TEST
