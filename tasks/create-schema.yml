@@ -1,7 +1,11 @@
 ---
 #
 - name: prepare sql script
-  template: src=create_schema.sql.j2 dest=/tmp/create_schema_{{ db_schema_name }}.sql
+  template: src=create_schemas.sql.j2 dest=/tmp/create_schemas.sql
 
-- name: create schema {{ db_schema_name }}
-  shell: "echo exit | {{ oracle_home }}/bin/sqlplus sys/{{ db_admin_password }} as sysdba @/tmp/create_schema_{{ db_schema_name }}.sql"
+- set_fact:
+    sysdba_text: as sysdba
+  when: oracle_database_sql_is_dba
+
+- name: create schema
+  shell: "echo exit | {{ oracle_database_sql_oracle_home }}/bin/sqlplus {{ oracle_database_sql_admin_username }}/{{ oracle_database_sql_admin_password }} {{ sysdba_text }} @/tmp/create_schemas.sql"
