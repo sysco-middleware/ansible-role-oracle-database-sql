@@ -20,4 +20,4 @@
   become_user: oracle
   environment:
     ORACLE_HOME: "{{ oracle_database_sql_oracle_home }}"
-    ORACLE_SID: "{{ oracle_database_sql_oracle_sid }}"
+    ORACLE_SID: "{{ oracle_database_sql_sid }}"
