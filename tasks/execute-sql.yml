@@ -16,3 +16,5 @@
 
 - name: create schema
   shell: "echo exit | {{ execute_command }} >> /tmp/oracle_database_sql.log"
+  become: yes
+  become_user: oracle

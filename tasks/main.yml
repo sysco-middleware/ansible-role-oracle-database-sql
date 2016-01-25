@@ -2,5 +2,3 @@
 # tasks file for oracle-database-sql
 - include: create-schemas.yml
   when: oracle_database_sql_create_schemas
-  become: yes
-  become_user: "{{ oracle_database_sql_os_user }}"
