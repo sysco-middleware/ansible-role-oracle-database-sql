@@ -18,3 +18,6 @@
   shell: "echo exit | {{ execute_command }} >> /tmp/oracle_database_sql.log"
   become: yes
   become_user: oracle
+  environment:
+    ORACLE_HOME: "{{ oracle_database_sql_oracle_home }}"
+    ORACLE_SID: "{{ oracle_database_sql_oracle_sid }}"
