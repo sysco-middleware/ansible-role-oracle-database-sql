@@ -1,0 +1,6 @@
+---
+# tasks file for oracle-database-sql
+- include: create-schema.sql
+  when: oracle_database_sql_create_schema
+  become: yes
+  become_user: "{{ oracle_database_sql_os_user }}"

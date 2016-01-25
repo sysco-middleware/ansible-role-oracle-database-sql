@@ -1,0 +1,7 @@
+---
+#
+- name: prepare sql script
+  template: src=create_schema.sql.j2 dest=/tmp/create_schema_{{ db_schema_name }}.sql
+
+- name: create schema {{ db_schema_name }}
+  shell: "echo exit | {{ oracle_home }}/bin/sqlplus sys/{{ db_admin_password }} as sysdba @/tmp/create_schema_{{ db_schema_name }}.sql"

@@ -1,0 +1,10 @@
+---
+# defaults file for oracle-database-sql
+oracle_database_sql_create_schema: no #yes
+oracle_database_sql_schemas:
+#  -
+#    name: TEST
+#    password: welcome1
+#    grants:
+#      - CONNECT
+#      - RESOURCE

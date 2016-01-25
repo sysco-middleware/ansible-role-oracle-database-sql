@@ -1,0 +1,22 @@
+galaxy_info:
+  author: jeqo (quilcate.jorge@gmail.com)
+  description: generate and execute oracle database sql scripts
+  company: sysco as
+
+  license: MIT
+
+  min_ansible_version: 1.2
+
+  github_branch: master
+
+  platforms:
+  - name: EL
+    versions:
+    - 7
+
+  galaxy_tags:
+    - oracle
+    - database
+    - sql
+
+dependencies: []

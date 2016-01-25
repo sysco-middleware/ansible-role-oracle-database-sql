@@ -1,0 +1,7 @@
+{% for schema in oracle_database_sql_schemas %}
+CREATE USER {{ schema.name }} IDENTIFIED BY {{ schema.password }} ;
+
+{% for grant in schema.grants %}
+GRANT "{{ grant }}" TO {{ schema.name }} ;
+{% endfor %}
+{% endfor %}
