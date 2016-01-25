@@ -8,5 +8,11 @@
     sysdba_text:
   when: not oracle_database_sql_is_dba
 
+- set_fact:
+    execute_command: "{{ oracle_database_sql_oracle_home }}/bin/sqlplus {{ oracle_database_sql_admin_username }}/{{ oracle_database_sql_admin_password }} {{ sysdba_text }} @{{ sql_file }}"
+
+- debug:
+    msg: "command: '{{ execute_command }}' will be executed"
+
 - name: create schema
-  shell: "echo exit | {{ oracle_database_sql_oracle_home }}/bin/sqlplus {{ oracle_database_sql_admin_username }}/{{ oracle_database_sql_admin_password }} {{ sysdba_text }} @{{ sql_file }} >> /tmp/oracle_database_sql.log"
+  shell: "echo exit | {{ execute_command }} >> /tmp/oracle_database_sql.log"
