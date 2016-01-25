@@ -7,5 +7,9 @@
     sysdba_text: as sysdba
   when: oracle_database_sql_is_dba
 
+- set_fact:
+    sysdba_text:
+  when: not oracle_database_sql_is_dba
+
 - name: create schema
   shell: "echo exit | {{ oracle_database_sql_oracle_home }}/bin/sqlplus {{ oracle_database_sql_admin_username }}/{{ oracle_database_sql_admin_password }} {{ sysdba_text }} @/tmp/create_schemas.sql"
