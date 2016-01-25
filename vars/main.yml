@@ -1,2 +1,3 @@
 ---
 # vars file for oracle-database-sql
+oracle_database_sql_os_user: oracle #
